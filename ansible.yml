@@ -1,0 +1,12 @@
+---
+- name: test playbook
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: excute a command
+      command: uname -r
+      register: cmd_output
+
+    - name: print comand output
+      debug: 
+        var: cmd_output
